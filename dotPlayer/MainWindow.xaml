@@ -7,14 +7,25 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="75"></RowDefinition>
         </Grid.RowDefinitions>
-        <MediaElement Name="mScreen" Grid.Row="0"></MediaElement>
+        <MediaElement Name="mScreen" Grid.Row="0" LoadedBehavior="Manual" UnloadedBehavior="Manual"></MediaElement>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Name="btnLoadFile" Width="100" Height="50" Click="btnLoadFile_Click">Load</Button>
+            <DockPanel Grid.Column="0" HorizontalAlignment="Center">
+                <Button HorizontalAlignment="Left"  Name="btnLoadFile" Width="50" Height="50" Click="btnLoadFile_Click">
+                    <Image Source="Resources/load.png" Stretch="Uniform"></Image>
+                </Button>
+                <Button Name="btnPlay" Width="50" Height="50" Click="btnPlay_Click">
+                    <Image Source="Resources/play.png" Stretch="Uniform"></Image>
+                </Button>
+                <Button Name="btnStop" Width="50" Height="50" Click="btnStop_Click">
+                    <Image Source="Resources/stopp.png" Stretch="Uniform"></Image>
+                </Button>
+                <Button Name="btnPause" Width="50" Height="50" Click="btnPause_Click">
+                    <Image Source="Resources/pause.png" Stretch="Uniform"></Image>
+                </Button>
+            </DockPanel>            
         </Grid>
     </Grid>    
 </Window>

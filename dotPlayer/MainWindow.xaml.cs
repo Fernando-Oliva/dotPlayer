@@ -21,5 +21,20 @@ namespace dotPlayer
         {
             mScreen.Source = videoPlayer.LoadFile();
         }
+
+        private void btnPlay_Click(object sender, RoutedEventArgs e)
+        {
+            mScreen.Play();
+        }
+
+        private void btnStop_Click(object sender, RoutedEventArgs e)
+        {
+            mScreen.Stop();
+        }
+
+        private void btnPause_Click(object sender, RoutedEventArgs e)
+        {
+            mScreen.Pause();
+        }
     }
 }
