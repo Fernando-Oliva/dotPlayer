@@ -19,7 +19,12 @@ namespace dotPlayer
 
         private void btnLoadFile_Click(object sender, RoutedEventArgs e)
         {
-            mScreen.Source = videoPlayer.LoadFile();
+            string mediaFile = videoPlayer.LoadFile();
+
+            if (!mediaFile.Equals(""))
+            {
+                mScreen.Source = new Uri(mediaFile);
+            }            
         }
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)

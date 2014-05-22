@@ -9,20 +9,20 @@ namespace dotPlayer.Core
 {
     public class Player
     {
-        public Uri LoadFile()
+        public string LoadFile()
         {
-
                 OpenFileDialog ofdSearchFile = new OpenFileDialog();
 
-                ofdSearchFile.ShowDialog();
-
-                ofdSearchFile.Filter = "All Files (*.*)|*.*";
+                ofdSearchFile.Title = "Select media";
+                ofdSearchFile.Filter = "All Suported|* .wmv;* .avi;* .mp3";
                 ofdSearchFile.FilterIndex = 1;
-                Uri uri = new Uri(ofdSearchFile.FileName);
-                
 
-                return uri;
+                if (ofdSearchFile.ShowDialog() == true)
+                {
+                    return ofdSearchFile.FileName; 
+                }
 
+                return "";
         }
     }
 }
